@@ -1,21 +1,21 @@
-Tested on Linux (will be tested on Mac and Windows soon)
-Works on Chrome versions >= 59.0
+Tested on Linux
+Works on Chrome versions >= 59.0  (For windows this should be >=60 as then chrome headless was introduced)
 
 
 Spiderable is configured through Meteor settings.json file
 
-Main settings:  (will update soon with more)
+Basic settings:  (will update soon with more)
 
 You can use a local instance of chrome by specifying:
-  Meteor.settings.spiderable.useLocalChrome=true
-  Meteor.settings.chromePath = "xxx" //to specify the path of the executable
+  Meteor.settings.spiderable.useLocalChrome=true  // the path of the executable will be resolved automatically
 
-Alternately you can use a remote chrome instance (e.g docker) by specifying the ip(or address) (now connect to port 9222)
+
+Alternately you can use a remote chrome instance (e.g docker) by specifying the ip and port (default: 9222)
   Meteor.settings.spiderable.chromeIp = "chrome-headless"
 
-You can set if you want the cached pages to be deleted from the database and if yes after how much time.
+You can set the interval after which the indexed pages will be removed from the database.
   Meteor.settings.spiderable.cacheLifetimeInMinutes = null; // no expirarion
-  Meteor.settings.spiderable.cacheLifetimeInMinutes = 100 * 60 * 60 // delete after 100 hours.
+  Meteor.settings.spiderable.cacheLifetimeInMinutes = 100 * 60 // delete after 100 hours.
 
 You can also set routes that you don't want to be cached:
   Meteor.settings.spiderable.ignoredRoutes = ["/assets/", "/sitemap.xml"] //default
@@ -23,6 +23,6 @@ You can also set routes that you don't want to be cached:
 Also you can define a Query that will get add at the end of the cached url in order to have custom client logic at rendering stage
   Meteor.settings.spiderable.customQuery = "isGettingCached"; //default
 
-In order to trigger the manual caching/recaching of a page you can call:
+In order to trigger the manual caching/recaching of a page you can call-server side:
   Spiderable.makeCacheOfPage(urlPath);
 

@@ -6,7 +6,8 @@ Package.describe({
 });
 
 Npm.depends({
-  'chrome-remote-interface': '0.22.0'
+  'chrome-launcher': '0.10.2',
+  'chrome-remote-interface': '0.24.0'
 });
 
 Package.onUse(function (api) {

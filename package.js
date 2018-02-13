@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'artlimes:meteor-chrome-spiderable',
-  summary: 'spiderable ,with mongo caching, using headless chrome',
+  name: 'artlimes:meteor-chrome-headless-spiderable',
+  summary: 'Meteor Spiderable page caching and indexing using Headless Chrome',
   version: '0.7.0',
-  git: 'https://github.com/artlimes/chrome-meteor-spiderable'
+  git: 'https://github.com/artlimes/meteor-chrome-headless-spiderable'
 });
 
 Npm.depends({
@@ -20,3 +20,4 @@ Package.onUse(function (api) {
   api.addFiles('lib/server.js', 'server');
   api.export('Spiderable');
 });
+

@@ -52,13 +52,10 @@ Also you can define a SearchQuery to add at the end of the cached url for custom
 Meteor.settings.spiderable.customQuery = "isGettingCached"; //default
 ```
 
-To trigger the caching/re-caching of a page you can call the following:
+To trigger the caching/re-caching of a page you call the following:
 ```js
 // Server-side
 Spiderable.makeCacheOfPage(urlPath);
-
-// Or manually client-side
-Meteor.call("caching/product");
 ```
 Or by simply visiting the page you want: `http://example.com/my-page?_escaped_fragment_=`
 

@@ -65,6 +65,6 @@ Or by simply visiting the page you want: `http://example.com/my-page?_escaped_fr
 We're working on more settings and options.
 
 ## Setup with Reaction Commerce
-[Reaction Commerce](https://reactioncommerce.com) is to most advanced open-source e-commerce platform built on Meteor and Node. You can make use of this plugin, by installing the [Reaction Commerce Caching Plugin](https://github.com/artlimes/reaction-commerce-caching-plugin).
+[Reaction Commerce](https://reactioncommerce.com) is the most advanced open-source e-commerce platform built on Meteor and Node. You can make use of this plugin, by installing the [Reaction Commerce Caching Plugin](https://github.com/artlimes/reaction-commerce-caching-plugin).
 
 

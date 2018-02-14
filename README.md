@@ -2,7 +2,7 @@
 
 What is it? A complete implementation of Meteor Spiderable WebApp using Chrome Headless. 
 
-In Meteor, Spiderable makes your webapp crawlable by spiders to allow search engines to cache your pages. The problem is that it's not always fast and doesn't allow for much control.
+In Meteor, Spiderable makes your webapp crawlable by spiders to allow search engines to to access you pages' content. The problem is that phantomjs often behaves abnormally or crashes and doesn't allow for much control.
 
 This implementation is using the new Chrome Headless browser for rendering your pages and gives you full control, while it caches your pages much faster.
 
@@ -49,7 +49,7 @@ Meteor.settings.spiderable.ignoredRoutes = ["/assets/", "/sitemap.xml"];
 
 Also you can define a SearchQuery to add at the end of the cached url for custom client-side logic at rendering time:
 ```js
-Meteor.settings.spiderable.customQuery = "isGettingCached"; //default
+Meteor.settings.spiderable.customQuery = "__isGettingPrerendered__";
 ```
 
 To trigger the caching/re-caching of a page you call the following:

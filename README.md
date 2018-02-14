@@ -2,7 +2,7 @@
 
 What is it? A complete implementation of Meteor Spiderable WebApp using Chrome Headless. 
 
-In Meteor, Spiderable makes your webapp crawlable by spiders to allow search engines to to access you pages' content. The problem is that phantomjs often behaves abnormally or crashes and doesn't allow for much control.
+In Meteor, Spiderable makes your webapp crawlable by spiders to allow search engines to access your pages' content. The problem is that phantomjs often behaves abnormally or crashes and doesn't allow for much control.
 
 This implementation is using the new Chrome Headless browser for rendering your pages and gives you full control, while it caches your pages much faster.
 

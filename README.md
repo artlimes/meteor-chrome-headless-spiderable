@@ -55,7 +55,7 @@ Meteor.settings.spiderable.customQuery = "__isGettingPrerendered__";
 To trigger the caching/re-caching of a page you call the following:
 ```js
 // Server-side
-import to Spiderable
+import Spiderable
 
 Spiderable.makeCacheOfPage(urlPath);
 ```

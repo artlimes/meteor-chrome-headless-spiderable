@@ -1,13 +1,13 @@
 Package.describe({
   name: 'artlimes:meteor-chrome-headless-spiderable',
   summary: 'Meteor Spiderable page caching and indexing using Headless Chrome',
-  version: '0.7.1',
+  version: '0.8.0',
   git: 'https://github.com/artlimes/meteor-chrome-headless-spiderable'
 });
 
 Npm.depends({
-  'chrome-launcher': '0.10.2',
-  'chrome-remote-interface': '0.24.0'
+  'chrome-launcher': '0.10.5',
+  'chrome-remote-interface': '0.27.1'
 });
 
 Package.onUse(function (api) {

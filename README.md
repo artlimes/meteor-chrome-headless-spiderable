@@ -38,7 +38,7 @@ Then create a Link from your app container, to the Chrome instance by using the 
 ### Additional Settings
 You can set the interval after which the indexed pages will be removed from the database.
 ```js
-Meteor.settings.spiderable.cacheLifetimeInMinutes = null; // no expiraration
+Meteor.settings.spiderable.cacheLifetimeInMinutes = null; // no expiration
 Meteor.settings.spiderable.cacheLifetimeInMinutes = 100 * 60 // delete after 100 hours.
 ```
 
@@ -52,6 +52,28 @@ Also you can define a SearchQuery to add at the end of the cached url for custom
 Meteor.settings.spiderable.customQuery = "__isGettingPrerendered__";
 ```
 
+In case you don't want the url query to be taken into account, so regardless of the query, only the clean url and its
+cached content is being stored to db and served to spiders, you can use:
+```js
+Meteor.settings.spiderable.stripUrlQuery = true;
+```
+
+If for some reason, you want to serve the content of a different page than the one being accessed by a spider you can use:
+  ```js
+  Meteor.settings.urlPathReplacements = [ ["original", "replacement"],["original2", "replacement2" ], ...etc ]; 
+  ```
+So if a spider requests the `https://example/original`, the actual content that will be served will be the one of
+the `https://example/replacement` cached page.
+
+
+By default, the plugin waits 10 secs for the Chrome-headless to load/render the page (before start checking periodically the content of the page for its
+readiness through the Tracker/subscriptions statuses and then store the content).
+This initial timeout can be changed through the checkAfterSeconds setting:
+```js
+   Meteor.settings.checkAfterSeconds = 10; 
+ ```
+
+
 To trigger the caching/re-caching of a page you call the following:
 ```js
 // Server-side
@@ -59,10 +81,13 @@ import { Spiderable } from "meteor/artlimes:meteor-chrome-headless-spiderable";
 
 Spiderable.makeCacheOfPage(urlPath);
 ```
-Or by simply visiting the page you want: `http://example.com/my-page?_escaped_fragment_=`
+Or by simply visiting the page you want(autocaching): `http://example.com/my-page?_escaped_fragment_=`
 
-### Coming Soon...
-We're working on more settings and options.
+in order to disable the afforementioned autocaching behavior, use:
+```js
+Meteor.settings.spiderable.autocaching = false;
+```
+
 
 ## Setup with Reaction Commerce
 [Reaction Commerce](https://reactioncommerce.com) is the most advanced open-source e-commerce platform built on Meteor and Node. You can make use of this plugin, by installing the [Reaction Commerce Caching Plugin](https://github.com/artlimes/reaction-commerce-caching-plugin).

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'artlimes:meteor-chrome-headless-spiderable',
   summary: 'Meteor Spiderable page caching and indexing using Headless Chrome',
-  version: '0.8.3',
+  version: '0.8.4',
   git: 'https://github.com/artlimes/meteor-chrome-headless-spiderable'
 });
 
